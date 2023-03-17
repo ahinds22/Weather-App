@@ -44,6 +44,19 @@ li {
   color: rgb(129, 126, 126);
 }
 
-footer {
-  text-align: center;
+.current-location {
+  display: block;
+  border-style: double;
+  border-color: lightskyblue;
+  background-color: rgba(153, 209, 245, 0.493);
+  border-radius: 45px;
+  box-shadow: 0px 4px 4px rgba(146, 146, 146, 0.1);
+}
+
+.search {
+  border-style: double;
+  border-color: lightsteelblue;
+  border-radius: 20px;
+  width: 250px;
+  height: 30px;
 }

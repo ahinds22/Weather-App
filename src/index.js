@@ -1,6 +1,9 @@
 let now = new Date();
 let hours = now.getHours();
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 let weekDays = [
   "Sunday",
@@ -15,34 +18,52 @@ let day = weekDays[now.getDay()];
 
 let today = document.querySelector("#today");
 today.innerHTML = `${day} ${hours}:${minutes}`;
-
 //
 
-function showCityValue(event) {
+function showWeather(response) {
+  let cityDisplay = document.querySelector("#city-display");
+  cityDisplay.innerHTML = response.data.name;
+  let todayDegree = document.querySelector("#todays-temp");
+  let todaysTemp = Math.round(response.data.main.temp);
+  let todayWeather = document.querySelector("#today-weather");
+  todayDegree.innerHTML = `${todaysTemp}°`;
+  todayWeather.innerHTML = `${response.data.weather[0].main}`;
+}
+//
+
+function submitCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search");
   let cityDisplay = document.querySelector("#city-display");
   cityDisplay.innerHTML = `${searchInput.value}`;
+  let city = document.querySelector("#search").value;
+  searchCity(city);
 }
 let citySearch = document.querySelector("#city-search");
-citySearch.addEventListener("submit", showCityValue);
+citySearch.addEventListener("submit", submitCity);
 
 //
+function searchCity(city) {
+  let apiKey = `2bd326a60dc89a53287e446e819664df`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+}
+//
 
-let farenheitLink = document.querySelector("#farenheit-link");
-let celsiusLink = document.querySelector("#celsius-link");
-let todaysTemp = document.querySelector("#todays-temp");
-
-farenheitLink.addEventListener("click", displayFarenheit);
-
-function displayFarenheit(event) {
-  event.preventDefault;
-  todaysTemp.innerHTML = "66°";
+function showPosition(position) {
+  let apiKey = `2bd326a60dc89a53287e446e819664df`;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
 }
 
-celsiusLink.addEventListener("click", displayCelsius);
-
-function displayCelsius(event) {
-  event.preventDefault;
-  todaysTemp.innerHTML = "19°";
+//
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+let currentButton = document.querySelector("#current-location");
+currentButton.addEventListener("click", getCurrentLocation);
+//
