@@ -1,0 +1,45 @@
+body {
+  font-family: "Chakra Petch", sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  margin: 0;
+  padding: 50px;
+  width: fit-content;
+  height: fit-content;
+  border: 4px;
+  border-style: solid;
+  border-radius: 20%;
+  border-color: lightskyblue;
+  background: rgba(245, 251, 255, 0.965);
+}
+
+div {
+  column-gap: 10px;
+}
+
+.week {
+  margin: 0;
+  padding: 5px;
+  border: 2px;
+  height: 150px;
+  width: 140px;
+  border-style: solid;
+  border-radius: 40%;
+  border-color: lightskyblue;
+  text-align: center;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.low {
+  color: rgb(129, 126, 126);
+}
+
+.celsius {
+  color: rgb(129, 126, 126);
+}
