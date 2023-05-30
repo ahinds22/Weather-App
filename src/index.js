@@ -26,7 +26,7 @@ function showWeather(response) {
   let todayDegree = document.querySelector("#todays-temp");
   let todaysTemp = Math.round(response.data.main.temp);
   let todayWeather = document.querySelector("#today-weather");
-  todayDegree.innerHTML = `${todaysTemp}°`;
+  todayDegree.innerHTML = `${todaysTemp}`;
   todayWeather.innerHTML = `${response.data.weather[0].main}`;
 }
 //

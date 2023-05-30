@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
@@ -23,81 +23,55 @@
   </head>
   <body>
     <div class="container">
-      <form id="city-search">
-        <input
-          type="search"
-          class="search"
-          id="search"
-          placeholder="Please enter a city"
-        /><input type="submit" />
-      </form>
-      <button class="current-location" id="current-location">
-        Current Location
-      </button>
-      <div class="row">
-        <div class="col">
-          <h1 id="city-display">Los Angeles</h1>
-          <ul>
-            <li id="today">
-              <b>Today</b>
-            </li>
-            <li><span id="today-weather">Rain</span></li>
-          </ul>
+      <div class="weather-app">
+        <div class="d-flex">
+          <form id="city-search">
+            <input
+              type="search"
+              class="search"
+              id="search"
+              placeholder="Please enter a city"
+            /><input type="submit" />
+          </form>
+          <button class="current-location" id="current-location">
+            Current Location
+          </button>
         </div>
-        <div class="col">
-          <ul>
-            <li><span class="todayicon"><img src=images/rain.png /></span></li>
-          </ul>
-          <h3>
-            <span id="todays-temp">51°</span
-            ><a href="#" id="farenheit-link">F</a>|<a href="#" id="celsius-link"
-              >C</a
-            >
-          </h3>
+        <div class="row">
+          <div class="col-6">
+            <h1 id="city-display">Los Angeles</h1>
+            <ul>
+              <li id="today">
+                <b>Today</b>
+              </li>
+              <li><span id="today-weather">Rain</span></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <div class="d-flex weather-temperature">
+              <span class="todayicon"
+                ><img src="images/rain.png" alt="Rain"
+              /></span>
+              <div>
+                <strong id="todays-temp">51</strong
+                ><span class="units"> °F | °C</span>
+              </div>
+            </div>
+            <ul>
+              <li>Humidity: 80%</li>
+              <li>Wind Speed: 1mi/h</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-2 week">
-          <h3>SAT</h3>
-          <ul>
-            <li><img src=images/rain.png></li>
-            <li>54°|<span class="low">49°</span></li>
-          </ul>
-        </div>
-        <div class="col-2 week">
-          <h3>SUN</h3>
-          <ul>
-            <li><img src=images/rain.png></li>
-            <li>58°|<span class="low">50°</span></li>
-          </ul>
-        </div>
-        <div class="col-2 week">
-          <h3>MON</h3>
-          <ul>
-            <li><img src=images/rain.png /></li>
-            <li>58°|<span class="low">43°</span></li>
-          </ul>
-        </div>
-        <div class="col-2 week">
-          <h3>TUE</h3>
-          <ul>
-            <li><img src=images/partlycloudy.png /></li>
-            <li>60°|<span class="low">40°</span></li>
-          </ul>
-        </div>
-        <div class="col-2 week">
-          <h3>WED</h3>
-          <ul>
-            <li><img src=images/sun.png /></li>
-            <li>62°|<span class="low">43°</span></li>
-          </ul>
-        </div>
+        <footer>
+          <a href="https://github.com/ahinds22/Weather-App" target="_blank"
+            >Open source code</a
+          >
+          by Athena Hinds
+        </footer>
       </div>
     </div>
-    <footer>
-      <a href="https://github.com/ahinds22/Weather-App">Open source code</a> by
-      Athena Hinds
-    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

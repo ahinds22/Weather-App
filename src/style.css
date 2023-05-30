@@ -2,40 +2,36 @@ body {
   font-family: "Chakra Petch", sans-serif;
   font-family: "Quicksand", sans-serif;
 }
-
-.container {
-  margin: 0;
-  padding: 50px;
-  width: fit-content;
-  height: fit-content;
-  border: 4px;
+.weather-app {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 30px;
+  border: 0.5px;
   border-style: solid;
-  border-radius: 20%;
+  border-radius: 2.5%;
   border-color: lightskyblue;
   background: rgba(245, 251, 255, 0.965);
 }
 
-div {
-  column-gap: 10px;
-}
-
-.week {
-  margin: 0;
-  padding: 5px;
-  border: 2px;
-  height: 150px;
-  width: 140px;
-  border-style: solid;
-  border-radius: 40%;
-  border-color: lightskyblue;
-  text-align: center;
-}
 ul {
   padding: 0;
 }
 li {
   list-style: none;
+  color: rgb(129, 126, 126);
+  font-size: 16px;
 }
+.weather-temperature img {
+  margin-right: 15px;
+  height: 80px;
+  width: 80px;
+}
+
+strong {
+  font-size: 54px;
+  line-height: 1.5;
+}
+
 .low {
   color: rgb(129, 126, 126);
 }
@@ -49,15 +45,21 @@ li {
   border-style: double;
   border-color: lightskyblue;
   background-color: rgba(153, 209, 245, 0.493);
-  border-radius: 45px;
+  border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(146, 146, 146, 0.1);
 }
 
 .search {
   border-style: double;
   border-color: lightsteelblue;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 250px;
   height: 30px;
   text-align: center;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -25px;
 }
